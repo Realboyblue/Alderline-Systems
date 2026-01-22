@@ -11,9 +11,9 @@
   --radius2: 26px;
   --container: 1120px;
 
-  --brand1:#5b8dff; /* soft blue */
-  --brand2:#57d6c8; /* soft teal */
-  --brand3:#b49cff; /* soft lavender */
+  --brand1:#3b63d9; /* soft blue */
+  --brand2:#c73a3e; /* soft teal */
+  --brand3:#b9a6ff; /* soft lavender */
   --ring: rgba(37,99,235,.22);
 
   --font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -117,9 +117,9 @@ img{ max-width:100%; display:block; }
 .btn:hover{ transform: translateY(-1px); box-shadow: 0 12px 26px rgba(15,23,42,.10); }
 .btn:active{ transform: translateY(0); box-shadow:none; }
 .btn-primary{
-  border-color: rgba(37,99,235,.22);
-  background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(20,184,166,.92));
-  color:white;
+  border-color: rgba(59,99,217,.22);
+  background: linear-gradient(135deg, rgba(59,99,217,.92), rgba(59,99,217,.82));
+  color: white;
 }
 .btn-primary:hover{ border-color: rgba(37,99,235,.32); }
 .btn-secondary{
@@ -521,3 +521,38 @@ textarea{ resize: vertical; }
 }
 
 img{max-width:100%;height:auto;}
+
+.brand-logo{
+  height: 28px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 520px){
+  .brand-logo{ height: 24px; }
+}
+
+/* Prevent oversized images on desktop */
+.hero-visual .art{
+  border-radius: 22px;
+  overflow: hidden;
+}
+.hero-visual .art img{
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 980px){
+  .hero-visual .art{ max-height: 360px; }
+}
+@media (min-width: 1280px){
+  .hero-visual .art{ max-height: 320px; }
+}
+@media (min-width: 1400px){
+  .hero-visual{
+    background: radial-gradient(800px 380px at 60% 20%, rgba(59,99,217,.10), transparent 60%),
+                radial-gradient(700px 320px at 10% 70%, rgba(199,58,62,.06), transparent 62%),
+                rgba(255,255,255,.70);
+  }
+}
