@@ -26,9 +26,9 @@ body{
   font-family:var(--font);
   color:var(--text);
   background:
-    radial-gradient(900px 420px at 15% -10%, rgba(91,141,255,.10), transparent 60%),
-    radial-gradient(900px 420px at 90% 10%, rgba(87,214,200,.09), transparent 62%),
-    radial-gradient(700px 380px at 60% 30%, rgba(180,156,255,.07), transparent 62%),
+    radial-gradient(900px 420px at 15% -10%, rgba(91,141,255,.07), transparent 60%),
+    radial-gradient(900px 420px at 90% 10%, rgba(87,214,200,.06), transparent 62%),
+    radial-gradient(700px 380px at 60% 30%, rgba(180,156,255,.05), transparent 62%),
     linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #ffffff 100%);
   line-height:1.55;
 }
@@ -481,58 +481,43 @@ textarea{ resize: vertical; }
   .nav-toggle{ display:block; }
 }
 
-/* Decorative stripe textures (lightweight SVGs) */
-.has-stripes {
-  position: relative;
-  overflow: hidden;
+/* Photo strip: real images, consistent and calm */
+.photo-strip{
+  padding-top: 18px;
+  padding-bottom: 28px;
 }
 
-.has-stripes::before{
-  content:"";
-  position:absolute;
-  inset: -1px;
-  background-image: url("../img/stripes-hero.svg");
-  background-size: cover;
-  background-position: center;
-  opacity: .18;
-  pointer-events:none;
-  z-index: 0;
+.photo-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 
-.has-stripes > *{
-  position: relative;
-  z-index: 1;
+.photo{
+  margin:0;
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow:hidden;
+  box-shadow: var(--shadow);
 }
 
-/* Section divider band */
-.stripe-band{
-  height: 12px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background-image: url("../img/stripes-divider.svg");
-  background-size: cover;
-  background-position: center;
-  opacity: .9;
+.photo img{
+  width:100%;
+  height: 170px;
+  object-fit: cover;
+  display:block;
 }
 
-/* Card accent */
-.card.has-card-stripes{
-  position: relative;
-  overflow: hidden;
+.photo figcaption{
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--muted);
 }
 
-.card.has-card-stripes::after{
-  content:"";
-  position:absolute;
-  right: -40px;
-  top: -40px;
-  width: 210px;
-  height: 160px;
-  background-image: url("../img/stripes-card.svg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 24px;
-  opacity: .28;
-  transform: rotate(10deg);
-  pointer-events:none;
+@media (max-width: 880px){
+  .photo-grid{ grid-template-columns: 1fr; }
+  .photo img{ height: 190px; }
 }
+
+img{max-width:100%;height:auto;}
