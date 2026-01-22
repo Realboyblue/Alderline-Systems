@@ -531,28 +531,22 @@ img{max-width:100%;height:auto;}
   .brand-logo{ height: 24px; }
 }
 
-/* Prevent oversized images on desktop */
-.hero-visual .art{
-  border-radius: 22px;
-  overflow: hidden;
-}
-.hero-visual .art img{
-  width: 100%;
-  height: 100%;
-  max-height: 360px;
-  object-fit: cover;
-  display: block;
-}
+/* Desktop: keep hero visuals from taking over */
 @media (min-width: 980px){
-  .hero-visual .art{ max-height: 360px; }
+  .hero-visual .art{
+    aspect-ratio: auto;
+    height: 260px;
+  }
 }
 @media (min-width: 1280px){
-  .hero-visual .art{ max-height: 320px; }
+  .hero-visual .art{ height: 240px; }
 }
-@media (min-width: 1400px){
+
+/* Slightly softer accent usage (red is for tiny details only) */
+.dot{ background: linear-gradient(135deg, rgba(59,99,217,1), rgba(199,58,62,1)); }
+
+@media (min-width: 980px){
   .hero-visual{
-    background: radial-gradient(800px 380px at 60% 20%, rgba(59,99,217,.10), transparent 60%),
-                radial-gradient(700px 320px at 10% 70%, rgba(199,58,62,.06), transparent 62%),
-                rgba(255,255,255,.70);
+    padding: 16px;
   }
 }
