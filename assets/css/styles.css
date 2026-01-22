@@ -480,3 +480,59 @@ textarea{ resize: vertical; }
   .navlinks{ display:none; }
   .nav-toggle{ display:block; }
 }
+
+/* Decorative stripe textures (lightweight SVGs) */
+.has-stripes {
+  position: relative;
+  overflow: hidden;
+}
+
+.has-stripes::before{
+  content:"";
+  position:absolute;
+  inset: -1px;
+  background-image: url("../img/stripes-hero.svg");
+  background-size: cover;
+  background-position: center;
+  opacity: .35;
+  pointer-events:none;
+  z-index: 0;
+}
+
+.has-stripes > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Section divider band */
+.stripe-band{
+  height: 18px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background-image: url("../img/stripes-divider.svg");
+  background-size: cover;
+  background-position: center;
+  opacity: .9;
+}
+
+/* Card accent */
+.card.has-card-stripes{
+  position: relative;
+  overflow: hidden;
+}
+
+.card.has-card-stripes::after{
+  content:"";
+  position:absolute;
+  right: -40px;
+  top: -40px;
+  width: 210px;
+  height: 160px;
+  background-image: url("../img/stripes-card.svg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  opacity: .9;
+  transform: rotate(10deg);
+  pointer-events:none;
+}

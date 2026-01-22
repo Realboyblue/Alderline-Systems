@@ -13,9 +13,6 @@ This is a simple, fast static site designed for Netlify (forms included).
 The contact form is a Netlify form ("consult"). After your first deploy, submit the form once so it appears in Netlify > Forms.
 
 ## Customize
-- Replace business name, description, and about section in index.html
-- Add your email/phone in the footer if you want
-- Swap the favicon in assets/img/favicon.svg
-
-## Optional: remove Google Fonts
-If you want zero external calls, remove the <link> tags to fonts.googleapis.com / fonts.gstatic.com in index.html.
+- Edit `index.html` to change services, wording, and contact options.
+- Swap the favicon in `assets/img/favicon.svg` if you want.
+- Remove Google Fonts links in `index.html` if you want zero external calls.
