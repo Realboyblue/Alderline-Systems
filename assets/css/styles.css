@@ -11,9 +11,9 @@
   --radius2: 26px;
   --container: 1120px;
 
-  --brand1:#2563eb; /* blue */
-  --brand2:#14b8a6; /* teal */
-  --brand3:#7c3aed; /* purple */
+  --brand1:#5b8dff; /* soft blue */
+  --brand2:#57d6c8; /* soft teal */
+  --brand3:#b49cff; /* soft lavender */
   --ring: rgba(37,99,235,.22);
 
   --font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -26,10 +26,10 @@ body{
   font-family:var(--font);
   color:var(--text);
   background:
-    radial-gradient(900px 420px at 15% -10%, rgba(37,99,235,.18), transparent 58%),
-    radial-gradient(900px 420px at 90% 10%, rgba(20,184,166,.14), transparent 60%),
-    radial-gradient(700px 380px at 60% 30%, rgba(124,58,237,.10), transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, var(--bg) 40%, #ffffff 100%);
+    radial-gradient(900px 420px at 15% -10%, rgba(91,141,255,.10), transparent 60%),
+    radial-gradient(900px 420px at 90% 10%, rgba(87,214,200,.09), transparent 62%),
+    radial-gradient(700px 380px at 60% 30%, rgba(180,156,255,.07), transparent 62%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #ffffff 100%);
   line-height:1.55;
 }
 
@@ -200,8 +200,8 @@ h1{
 
 .section{ padding: 58px 0; }
 .section.alt{
-  background: rgba(255,255,255,.65);
-  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,.72);
+border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 .section-head{
@@ -494,7 +494,7 @@ textarea{ resize: vertical; }
   background-image: url("../img/stripes-hero.svg");
   background-size: cover;
   background-position: center;
-  opacity: .35;
+  opacity: .18;
   pointer-events:none;
   z-index: 0;
 }
@@ -506,7 +506,7 @@ textarea{ resize: vertical; }
 
 /* Section divider band */
 .stripe-band{
-  height: 18px;
+  height: 12px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background-image: url("../img/stripes-divider.svg");
@@ -532,7 +532,7 @@ textarea{ resize: vertical; }
   background-size: cover;
   background-position: center;
   border-radius: 24px;
-  opacity: .9;
+  opacity: .28;
   transform: rotate(10deg);
   pointer-events:none;
 }
