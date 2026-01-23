@@ -1,38 +1,40 @@
-(function () {
-  const year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
+(() => {
+  const prefersReduced = () =>
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const btn = document.querySelector('.nav-toggle');
-  const menu = document.getElementById('mobileMenu');
+  const planes = Array.from(document.querySelectorAll('.plane'));
+  const io = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+    if (!visible.length) return;
 
-  function closeMenu() {
-    if (!btn || !menu) return;
-    btn.setAttribute('aria-expanded', 'false');
-    menu.hidden = true;
-  }
+    const active = visible[0].target;
+    planes.forEach(p => p.classList.remove('is-active','is-behind','is-peek'));
+    const idx = planes.indexOf(active);
+    if (idx >= 0) {
+      planes[idx].classList.add('is-active');
+      if (planes[idx - 1]) planes[idx - 1].classList.add('is-behind');
+      if (planes[idx + 1]) planes[idx + 1].classList.add('is-peek');
+    }
+  }, { threshold: [0.15,0.35,0.55,0.75] });
 
-  if (btn && menu) {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      menu.hidden = expanded;
+  planes.forEach(p => io.observe(p));
+
+  // Noticeable parallax (still tasteful)
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      if (prefersReduced()) return;
+      const y = window.scrollY || 0;
+      document.documentElement.style.setProperty('--parallaxBg', `${y * -0.06}px`);
+      document.documentElement.style.setProperty('--parallaxMid', `${y * -0.10}px`);
+      document.documentElement.style.setProperty('--parallaxFg', `${y * -0.14}px`);
     });
-
-    menu.addEventListener('click', (e) => {
-      const t = e.target;
-      if (t && t.tagName === 'A') closeMenu();
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!menu.hidden) {
-        const target = e.target;
-        const clickedInside = menu.contains(target) || btn.contains(target);
-        if (!clickedInside) closeMenu();
-      }
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 980) closeMenu();
-    });
-  }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();

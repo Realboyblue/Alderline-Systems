@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160">
+<style>
+.t{font:800 72px Inter,system-ui;fill:#1B2230}
+.s{font:700 26px Inter,system-ui;fill:#4C586B;letter-spacing:2px}
+</style>
+<text x="0" y="90" class="t">Alderline Systems</text>
+<text x="2" y="132" class="s">SECURE · AUTOMATE · RECOVER</text>
+</svg>
