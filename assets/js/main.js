@@ -2,6 +2,38 @@
   const prefersReduced = () =>
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Year in footer
+  const y = document.getElementById('year');
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  // Mobile menu toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const mobile = document.getElementById('mobileMenu');
+  const setMenu = (open) => {
+    if (!toggle || !mobile) return;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) mobile.removeAttribute('hidden');
+    else mobile.setAttribute('hidden', '');
+  };
+
+  if (toggle && mobile) {
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setMenu(!open);
+    });
+
+    // Close menu when a link is clicked
+    mobile.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => setMenu(false));
+    });
+
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setMenu(false);
+    });
+  }
+
+  // ===== Smooth-ish, stable section highlighting (no blur/pointer weirdness) =====
   const planes = Array.from(document.querySelectorAll('.plane'));
   const railLinks = Array.from(document.querySelectorAll('.rail a[data-rail]'));
 
@@ -12,48 +44,81 @@
     });
   };
 
-  // Plane focus (2.5D stack)
-  const io = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(e => e.isIntersecting)
-      .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
-    if (!visible.length) return;
+  let activeId = '';
+  let ticking = false;
 
-    const active = visible[0].target;
-    planes.forEach(p => p.classList.remove('is-active','is-behind','is-peek'));
-    const idx = planes.indexOf(active);
-    if (idx >= 0) {
-      planes[idx].classList.add('is-active');
-      if (planes[idx - 1]) planes[idx - 1].classList.add('is-behind');
-      if (planes[idx + 1]) planes[idx + 1].classList.add('is-peek');
-      setRailActive(active.id);
+  const chooseActivePlane = () => {
+    if (!planes.length) return;
+
+    const header = document.querySelector('.topbar');
+    const headerH = header ? header.getBoundingClientRect().height : 0;
+
+    // A little above center feels better with a sticky header
+    const targetY = headerH + (window.innerHeight - headerH) * 0.33;
+
+    let best = null;
+    let bestDist = Infinity;
+
+    for (const p of planes) {
+      const r = p.getBoundingClientRect();
+      // Ignore sections fully out of view
+      if (r.bottom < headerH + 40 || r.top > window.innerHeight - 40) continue;
+      const center = (r.top + r.bottom) / 2;
+      const d = Math.abs(center - targetY);
+      if (d < bestDist) {
+        bestDist = d;
+        best = p;
+      }
     }
-  }, { threshold: [0.18,0.35,0.55,0.75] });
 
-  planes.forEach(p => io.observe(p));
+    if (!best) return;
 
-  // Rail: smooth scroll and focus
-  railLinks.forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (!href || !href.startsWith('#')) return;
-      const el = document.querySelector(href);
-      if (!el) return;
-      e.preventDefault();
-      el.scrollIntoView({ behavior: prefersReduced() ? 'auto' : 'smooth', block: 'start' });
-    }, { passive: false });
-  });
+    const id = best.id || '';
+    if (id && id !== activeId) {
+      activeId = id;
+      planes.forEach(p => p.classList.remove('is-active', 'is-behind', 'is-peek'));
+      const idx = planes.indexOf(best);
+      if (idx >= 0) {
+        planes[idx].classList.add('is-active');
+        if (planes[idx - 1]) planes[idx - 1].classList.add('is-behind');
+        if (planes[idx + 1]) planes[idx + 1].classList.add('is-peek');
+      }
+      setRailActive(id);
+    }
+  };
 
-  // Hero tilt (quiet future)
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      chooseActivePlane();
+
+      // Tasteful parallax (desktop only)
+      if (prefersReduced()) return;
+      if (window.innerWidth < 900) return;
+      const y = window.scrollY || 0;
+      document.documentElement.style.setProperty('--parallaxBg', `${y * -0.05}px`);
+      document.documentElement.style.setProperty('--parallaxMid', `${y * -0.08}px`);
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
+
+  // Rail: allow default anchor behavior (CSS scroll-margin handles header offset)
+
+  // Hero tilt (desktop only)
   const tilt = document.querySelector('.hero-tilt');
   const stack = tilt ? tilt.querySelector('.stack') : null;
-  if (tilt && stack && !prefersReduced()) {
+  if (tilt && stack && !prefersReduced() && window.innerWidth >= 900) {
     tilt.addEventListener('mousemove', (e) => {
       const r = tilt.getBoundingClientRect();
       const nx = (e.clientX - r.left) / r.width;   // 0..1
-      const ny = (e.clientY - r.top) / r.height;   // 0..1
-      const ry = (nx - 0.5) * 10; // degrees
-      const rx = (0.5 - ny) * 8;  // degrees
+      const ny = (e.clientY - r.top) / r.height;  // 0..1
+      const ry = (nx - 0.5) * 8; // degrees
+      const rx = (0.5 - ny) * 6;
       stack.style.setProperty('--rx', `${rx}deg`);
       stack.style.setProperty('--ry', `${ry}deg`);
     });
@@ -62,21 +127,4 @@
       stack.style.setProperty('--ry', '0deg');
     });
   }
-
-  // Tasteful parallax
-  let ticking = false;
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      ticking = false;
-      if (prefersReduced()) return;
-      const y = window.scrollY || 0;
-      document.documentElement.style.setProperty('--parallaxBg', `${y * -0.06}px`);
-      document.documentElement.style.setProperty('--parallaxMid', `${y * -0.10}px`);
-      document.documentElement.style.setProperty('--parallaxFg', `${y * -0.14}px`);
-    });
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 })();
