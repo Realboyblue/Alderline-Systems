@@ -682,3 +682,80 @@ img{max-width:100%;height:auto;}
 .icon-badge{ position:relative; }
 .icon-badge img{ width: 26px; height: 26px; }
 
+
+
+/* ===== Brand lockup (real logo) ===== */
+.brand-mark{
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+}
+.brand-word{
+  height: 26px;
+  width: auto;
+  display: block;
+}
+.brand-tag{
+  font-size: 12px;
+  line-height: 1.1;
+  color: var(--muted2);
+  font-weight: 800;
+  letter-spacing: .18px;
+}
+@media (max-width: 520px){
+  .brand-mark{ width: 32px; height: 32px; }
+  .brand-word{ height: 22px; }
+  .brand-tag{ display:none; }
+}
+
+/* Proof section: keep quote as a block */
+.quote-card{
+  margin-top: 14px;
+  border-radius: var(--radius2);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.86);
+  box-shadow: var(--shadow2);
+  padding: 18px;
+}
+.quote-card .quote{
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -.2px;
+}
+.quote-card .fineprint{
+  margin: 10px 0 0;
+  color: var(--muted2);
+  font-size: 13px;
+}
+
+/* Pricing: callout card */
+.callout{ margin-top: 18px; }
+.callout-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 16px;
+  align-items:center;
+}
+.callout-art{
+  border-radius: 22px;
+  overflow:hidden;
+  border: 1px solid rgba(15,23,42,.10);
+  background: rgba(255,255,255,.75);
+}
+.callout-art img{
+  width: 100%;
+  height: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  display:block;
+}
+@media (max-width: 880px){
+  .callout-grid{ grid-template-columns: 1fr; }
+  .callout-art{ order: -1; }
+  .callout-art img{
+    max-height: 220px;
+    object-fit: contain;
+    padding: 10px;
+  }
+}
