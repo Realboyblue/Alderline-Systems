@@ -1,75 +1,711 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Alderline Systems | Secure · Automate · Recover</title>
-<link rel="stylesheet" href="assets/css/styles.css"/>
-<link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alderline Systems | Websites, Tech Support, Security Setup</title>
+  <meta name="description" content="Website design & maintenance, remote tech support, and simple security setup for small businesses. Alberta-based, serving Canada." />
+  <meta name="theme-color" content="#eef2ff" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alderline Systems" />
+  <meta property="og:description" content="Websites, tech support, and simple security setup for small businesses." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- System fonts are fine; this is optional. Comment out if you want zero external calls. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Alderline Systems",
+    "areaServed": "Canada",
+    "description": "Website design & maintenance, remote tech support, and simple security setup for small businesses.",
+    "url": "/",
+    "knowsAbout": ["Websites", "Website maintenance", "Tech support", "Business email", "Account security", "Backups"]
+  }
+  </script>
 </head>
+
 <body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg-topo"></div>
+    <div class="bg-noise"></div>
+  </div>
 
-<div class="bg">
-  <div class="bg-topo"></div>
-  <div class="bg-noise"></div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar" role="banner">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Alderline Systems home"><img class="brand-logo" src="assets/img/logo-wordmark.webp" alt="Alderline Systems" loading="eager" /></a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a href="#secure">Secure</a>
+          <a href="#automate">Automate</a>
+          <a href="#recover">Recover</a>
+          <a href="#proof">Proof</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact" class="btn btn-primary">Request a consult</a>
+        </nav>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <div class="container">
+        <a href="#secure">Secure</a>
+        <a href="#automate">Automate</a>
+        <a href="#recover">Recover</a>
+        <a href="#proof">Proof</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="btn btn-primary">Request a consult</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero plane is-active">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill">Remote-first • Alberta-based • Serving Canada</p>
+          <h1>Lock down your business tech — without the headache.</h1>
+          <p class="lead">We build and maintain clean business websites, fix day‑to‑day tech problems, and improve security with proven best practices — explained in plain English.</p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Request a consult</a>
+            <a class="btn btn-ghost" href="#services">See services</a>
+          </div>
+
+          <div class="kpis" aria-label="What we optimize for">
+            <div class="kpi">
+              <div class="num">Safer setup</div>
+              <div class="lbl">Stronger sign‑ins and better account recovery</div>
+            </div>
+            <div class="kpi">
+              <div class="num">Stop the problem fast</div>
+              <div class="lbl">Stop weird emails, regain access, and clean up what changed</div>
+            </div>
+            <div class="kpi">
+              <div class="num">Easy handoff</div>
+              <div class="lbl">Short notes on what we changed and what to do next</div>
+            </div>
+          </div>
+        </div>
+<div class="trust-item">
+              <div class="trust-kicker">Safe by default</div>
+              <div class="trust-body">Two‑step sign‑in, safer passwords, and solid recovery options.</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-kicker">Automate</div>
+              <div class="trust-body">Turn repetitive work into a simple button + checklist.</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-visual" aria-label="Overview">
+          <div class="art" aria-label="Illustration">
+            <img src="assets/img/hero.webp" alt="Clean, modern IT workspace" loading="lazy" />
+          </div>
+          <h2>What you get</h2>
+          <p class="muted">
+            Clear scope, safe changes, and a clean handoff. If something is broken or compromised, we fix it first—then strengthen and tidy up.
+          </p>
+          <div class="proof" aria-label="Highlights">
+            <span class="chip"><span class="dot" aria-hidden="true"></span>Safer sign‑ins</span>
+            <span class="chip"><span class="dot" aria-hidden="true"></span>Simple how‑to notes</span>
+            <span class="chip"><span class="dot" aria-hidden="true"></span>Less manual work</span>
+          </div>
+          <div class="cta-row" style="margin-top:14px">
+            <a class="btn btn-primary btn-block" href="#contact">Request a consult</a>
+          </div>
+          <p class="fineprint">Typical response: 1–2 business days. Priority containment available.</p>
+        </aside>
+      
+        <aside class="hero-visual stack-wrap" aria-label="Secure · Automate · Recover">
+          <div class="stack" aria-label="Layered cards">
+            <a class="card z1" href="#secure"><img src="assets/img/icon-secure.svg" alt="" /><strong>Secure</strong><span>Safer sign‑ins + recovery</span><em>Learn more →</em></a>
+            <a class="card z2" href="#automate"><img src="assets/img/icon-automate.svg" alt="" /><strong>Automate</strong><span>Less manual busywork</span><em>Learn more →</em></a>
+            <a class="card z3" href="#recover"><img src="assets/img/icon-recover.svg" alt="" /><strong>Recover</strong><span>Backups that restore</span><em>Learn more →</em></a>
+          </div>
+          <div class="stack-badge">
+            <img src="assets/img/logo-mark.svg" alt="" aria-hidden="true"/>
+            <span>Secure · Automate · Recover</span>
+          </div>
+        </aside>
 </div>
+    </section>
+<section id="secure" class="section plane">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p class="muted">Clear, practical help for small businesses—remote first, with optional on‑site if you’re local.</p>
+        </div>
 
-<header class="topbar">
-  <div class="container nav">
-    <img src="assets/img/logo-wordmark.svg" class="logo" alt="Alderline Systems"/>
-    <nav>
-      <a href="#secure">Secure</a>
-      <a href="#automate">Automate</a>
-      <a href="#recover">Recover</a>
-      <a href="#contact" class="btn">Request a consult</a>
-    </nav>
-  </div>
-</header>
+        <div class="cards">
+          <article class="card">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-web.svg" alt="" loading="lazy"></div>
+              <div>
+                <h3>Website design (new or refresh)</h3>
+                <p class="tag">Best for: a clean site that looks good on phones and gets you leads.</p>
+              </div>
+            </div>
+            <ul>
+              <li>Modern, mobile‑friendly design</li>
+              <li>Contact form that actually delivers</li>
+              <li>Basic Google setup (search + analytics)</li>
+              <li>Help with wording if you want it</li>
+            </ul>
+            <div class="card-cta">
+              <a class="btn btn-secondary" href="#contact">Build or refresh my site</a>
+            </div>
+          </article>
 
-<section class="hero plane is-active">
-  <div class="container hero-grid">
+          <article class="card">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-web.svg" alt="" loading="lazy"></div>
+              <div>
+                <h3>Website care plan</h3>
+                <p class="tag">Best for: “set it and forget it” updates, backups, and quick fixes.</p>
+              </div>
+            </div>
+            <ul>
+              <li>Regular updates + security checks</li>
+              <li>Backups + easy restore if something breaks</li>
+              <li>Uptime monitoring (we’ll know if it goes down)</li>
+              <li>Small content edits (text, photos, links)</li>
+            </ul>
+            <div class="card-cta">
+              <a class="btn btn-secondary" href="#contact">Set up a care plan</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-headset.svg" alt="" loading="lazy"></div>
+              <div>
+                <h3>Remote tech support</h3>
+                <p class="tag">Best for: day‑to‑day issues—without a full-time IT person.</p>
+              </div>
+            </div>
+            <ul>
+              <li>Help with email, computers, and common app issues</li>
+              <li>New computer setup + moving your files</li>
+              <li>Wi‑Fi and office setup troubleshooting</li>
+              <li>Optional monthly support hours (predictable)</li>
+            </ul>
+            <div class="card-cta">
+              <a class="btn btn-secondary" href="#contact">Get support</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-mail.svg" alt="" loading="lazy"></div>
+              <div>
+                <h3>Business email setup & cleanup</h3>
+                <p class="tag">Best for: custom domain email, shared inboxes, and safer sign‑ins.</p>
+              </div>
+            </div>
+            <ul>
+              <li>Set up business email (Microsoft 365 / Google)</li>
+              <li>Shared inboxes, forwarding, and access cleanup</li>
+              <li>Two‑step sign‑in + account recovery setup</li>
+              <li>Fix “weird rules” and spam problems</li>
+            </ul>
+            <div class="card-cta">
+              <a class="btn btn-secondary" href="#contact">Fix my email setup</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-shield.svg" alt="" loading="lazy"></div>
+              <div>
+                <h3>Security & backup safety check</h3>
+                <p class="tag">Best for: “we should tighten things up” before something breaks.</p>
+              </div>
+            </div>
+            <ul>
+              <li>Safer sign‑ins + password manager setup</li>
+              <li>Backup review + a real restore test (proof it works)</li>
+              <li>Quick review of devices and who has access</li>
+              <li>A prioritized “fix list” you can understand</li>
+            </ul>
+            <div class="card-cta">
+              <a class="btn btn-secondary" href="#contact">Book a safety check</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-gear.svg" alt="" loading="lazy"></div>
+              <div>
+                <h3>Automation & time‑savers</h3>
+                <p class="tag">Best for: repetitive tasks that waste hours every week.</p>
+              </div>
+            </div>
+            <ul>
+              <li>Pick one painful process and simplify it</li>
+              <li>Build a safe “push button” workflow</li>
+              <li>Short how‑to notes so it’s easy to run</li>
+              <li>Optional: scheduled runs and simple alerts</li>
+            </ul>
+            <div class="card-cta">
+              <a class="btn btn-secondary" href="#contact">Scope a time‑saver</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="addons" style="margin-top: 22px;">
+          <h3 class="addons-title">Popular bundles (no pricing posted)</h3>
+          <div class="addons-grid">
+            <div class="addon"><strong>Website Launch</strong><span>New site + contact form + basic Google setup</span></div>
+            <div class="addon"><strong>Website Care</strong><span>Updates, backups, monitoring, small edits</span></div>
+            <div class="addon"><strong>Security Starter Pack</strong><span>Two‑step sign‑in + password manager + recovery</span></div>
+            <div class="addon"><strong>Support Hours Bank</strong><span>Monthly remote support in small time blocks</span></div>
+          </div>
+        </div>
+
+        <div class="note">
+          <p><strong>Good to know:</strong> We focus on practical fixes, safer setups, and clean websites. If you need a full “helpdesk for everything,” we can point you to a managed IT provider.</p>
+        </div>
+      </div>
+    </section>
+<section id="pricing" class="section alt plane">
+      <div class="container split">
+        <div>
+          <div class="section-head">
+            <h2>Pricing</h2>
+            <p class="muted">Simple, transparent “starting at” pricing. Most work is quoted after a quick call.</p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-top">
+                <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-headset.svg" alt="" loading="lazy"></div>
+                <div>
+                  <h3>Tech support</h3>
+                  <p class="tag">Remote help for everyday issues.</p>
+                </div>
+              </div>
+              <ul>
+                <li><strong>$135/hr</strong> remote (30‑minute billing)</li>
+                <li><strong>$185/hr</strong> on‑site (2‑hour minimum)</li>
+                <li>Urgent / after‑hours: <strong>1.5×</strong></li>
+                <li>Optional “hours bank” for predictable support</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-web.svg" alt="" loading="lazy"></div>
+                <div>
+                  <h3>Websites</h3>
+                  <p class="tag">Clean, fast sites that get you leads.</p>
+                </div>
+              </div>
+              <ul>
+                <li><strong>$1,200+</strong> starter site (1–3 pages)</li>
+                <li><strong>$3,500+</strong> small business site (5–10 pages)</li>
+                <li>Contact form + basic Google setup included</li>
+                <li>Copy/wording help available</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-shield.svg" alt="" loading="lazy"></div>
+                <div>
+                  <h3>Care plans</h3>
+                  <p class="tag">Updates, backups, and peace of mind.</p>
+                </div>
+              </div>
+              <ul>
+                <li><strong>$129/mo</strong> Care Lite (basics)</li>
+                <li><strong>$249/mo</strong> Care Plus (monitoring + faster response)</li>
+                <li><strong>$399/mo</strong> Care Pro (priority + more changes)</li>
+                <li>Cancel anytime after the first month</li>
+              </ul>
+            </article>
+          </div>
+
+          <p class="fineprint">
+            Prices are in CAD and exclude GST. Third‑party costs (domain, hosting, paid tools) are billed at cost.
+            You’ll always get clear scope before we start.
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-label="Pricing illustration">
+          <div class="art" aria-label="Illustration">
+            <img src="assets/img/laptop.webp" alt="Laptop workspace" loading="lazy" />
+          </div>
+          <h2>Want a fixed quote?</h2>
+          <p class="muted">Tell us what you need. We’ll reply with a short plan and a clear estimate—no surprises.</p>
+          <div class="cta-row" style="margin-top:14px">
+            <a class="btn btn-primary btn-block" href="#contact">Get an estimate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<section class="section brand-band" aria-label="Brand">
+  <div class="container brand-band-inner">
+    <div class="brand-band-logo">
+      <img src="assets/img/logo-mark.webp" alt="Alderline Systems logo" loading="lazy" />
+    </div>
     <div>
-      <h1>Lock down your business tech — without the headache.</h1>
-      <p class="lead">We make sign-ins safer, set up backups you can actually restore, and fix day-to-day tech issues in plain English.</p>
-      <a class="btn primary" href="#contact">Request a consult</a>
-    </div>
-    <div class="stack">
-      <div class="card z1"><img src="assets/img/icon-secure.svg"/><strong>Secure</strong><span>Safer sign‑ins</span></div>
-      <div class="card z2"><img src="assets/img/icon-automate.svg"/><strong>Automate</strong><span>Less manual busywork</span></div>
-      <div class="card z3"><img src="assets/img/icon-recover.svg"/><strong>Recover</strong><span>Backups that restore</span></div>
+      <h2 class="brand-band-title">Alberta-based, serving Canada</h2>
+      <p class="muted">Clear, practical IT help with a focus on security, reliability, and simple handoff.</p>
     </div>
   </div>
 </section>
+<section id="how" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p class="muted">Simple, calm, and documented.</p>
+        </div>
 
-<section id="secure" class="plane">
-  <div class="container plane-inner">
-    <h2>Secure</h2>
-    <p>Practical security that reduces risk and improves recovery.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Intake</h3>
+              <p>Quick call or form submission. If it’s urgent, we start with containment.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Plan</h3>
+              <p>We agree on scope, access, and outcomes. No surprise “extras.”</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Execute</h3>
+              <p>Work is done carefully and safely, with notes on what changed (and how to undo it if needed).</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Handoff</h3>
+              <p>You get simple notes, safer storage for passwords, and clear next steps.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Do you work remotely?</summary>
+            <p>Yes—most work can be done remotely. If you’re local, on-site is possible for projects like device installs or wiring.</p>
+          </details>
+          <details>
+            <summary>Do you work with business email like Microsoft 365 or Google Workspace?</summary>
+            <p>Yes. If something’s wrong, we’ll stabilize it first, then tighten things up so it’s less likely to happen again.</p>
+          </details>
+          <details>
+            <summary>Can you guarantee I won't get hacked again?</summary>
+            <p>No one can. But we can materially reduce your risk and make recovery faster and less expensive.</p>
+          </details>
+          <details>
+            <summary>Do you offer monthly support?</summary>
+            <p>Yes. Some clients prefer a simple monthly plan—either a website care plan (updates, backups, monitoring) or a support-hours bank for remote tech help.</p>
+          </details>
+          <details>
+            <summary>Can you help with Google Business Profile and basic SEO?</summary>
+            <p>Yes. We can set up the basics so you show up properly in local search, and we’ll explain what matters (and what doesn’t).</p>
+          </details>
+        </div>
+      </div>
+    </section>
+<section id="about" class="section">
+      <div class="container about">
+        <div>
+          <h2>About</h2>
+          <p class="lead">
+            Alderline Systems helps small businesses get reliable tech without the stress.
+            We bring a “do it right” mindset—clear explanations, clean setups, and no surprises.
+          </p>
+          <p class="muted">
+            If you’ve had an account break‑in, we’ll get you stable fast.
+            If you’re trying to avoid one, we’ll strengthen weak spots before they turn into downtime.
+          </p>
+
+          <div class="badge-row">
+            <span class="badge">Websites</span>
+            <span class="badge">Tech support</span>
+            <span class="badge">Safer sign‑ins</span>
+            <span class="badge">Backups</span>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3>What you’ll get</h3>
+          <ul class="checklist">
+            <li><span class="check" aria-hidden="true">✓</span> Straight answers</li>
+            <li><span class="check" aria-hidden="true">✓</span> Safer sign‑ins (two‑step + password manager)</li>
+            <li><span class="check" aria-hidden="true">✓</span> Notes you can actually use</li>
+            <li><span class="check" aria-hidden="true">✓</span> Respect for your time and budget</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="section plane">
+  <div class="container split">
+    <div>
+      <div class="section-head">
+        <h2>What clients care about</h2>
+            <p class="muted">No jargon, no surprises—just results and clean handoffs.</p>
+          </div>
+          <div class="testimonial">
+            <p class="quote">“We got control of our email back fast, stopped the spam, and ended up with a much safer setup.”</p>
+            <div class="who"><span class="avatar" aria-hidden="true"></span><span>Small business owner • Alberta</span></div>
+            <p class="fineprint">Placeholder quote—swap this with a real client quote when you’re ready.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-head">
+            <h2>Also available</h2>
+            <p class="muted">Project-based add‑ons that come up a lot.</p>
+          </div>
+          <div class="cards" style="grid-template-columns: 1fr; gap:12px;">
+            <article class="card">
+              <div class="card-top">
+                <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-pin.svg" alt="" loading="lazy"></div>
+                <div>
+                  <h3>Google Business Profile setup</h3>
+                  <p class="tag">Help people find you locally (maps + search).</p>
+                </div>
+              </div>
+              <ul>
+                <li>Setup or cleanup + basic optimization</li>
+                <li>Photos, hours, services, and contact links</li>
+                <li>Simple guidance for reviews</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-web.svg" alt="" loading="lazy"></div>
+                <div>
+                  <h3>Website speed tune‑up</h3>
+                  <p class="tag">Make your site load faster and feel smoother.</p>
+                </div>
+              </div>
+              <ul>
+                <li>Image compression + cleanup</li>
+                <li>Fix broken links and small layout issues</li>
+                <li>Basic SEO tidy‑up (titles, descriptions)</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-lock.svg" alt="" loading="lazy"></div>
+                <div>
+                  <h3>Email spoofing protection</h3>
+                  <p class="tag">Helps stop people pretending to email “from you”.</p>
+                </div>
+              </div>
+              <ul>
+                <li>Safe email settings (without breaking delivery)</li>
+                <li>Rollout in steps</li>
+                <li>Optional ongoing check-ins</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-gear.svg" alt="" loading="lazy"></div>
+                <div>
+                  <h3>New computer setup & handoff</h3>
+                  <p class="tag">Get a new device ready to work—properly.</p>
+                </div>
+              </div>
+              <ul>
+                <li>Move files + set up apps and email</li>
+                <li>Safer sign‑ins and backup setup</li>
+                <li>Short “here’s how it works” walkthrough</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<section id="recover" class="section alt plane">
+  <div class="container">
+    <div class="section-head">
+      <h2>Recover</h2>
+      <p class="muted">Backups are only real if they restore. We set them up and test a restore so you have proof.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-top">
+          <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-recover.svg" alt="" loading="lazy"></div>
+          <div>
+            <h3>Backups that actually work</h3>
+            <p class="tag">Know what’s protected, where it is, and how to restore it.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Choose what matters (email, files, devices, website)</li>
+          <li>Local + cloud options (simple, not overbuilt)</li>
+          <li>A real restore test, not “set and forget”</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="card-top">
+          <div class="icon-badge" aria-hidden="true"><img src="assets/img/icon-secure.svg" alt="" loading="lazy"></div>
+          <div>
+            <h3>Account recovery setup</h3>
+            <p class="tag">If someone gets in, you can get it back—fast.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Recovery emails and phone numbers verified</li>
+          <li>Admin access cleaned up</li>
+          <li>Clear “what to do” steps if something happens</li>
+        </ul>
+      </article>
+    </div>
   </div>
 </section>
 
-<section id="automate" class="plane">
-  <div class="container plane-inner">
-    <h2>Automate</h2>
-    <p>Turn repeat work into documented, reliable processes.</p>
-  </div>
-</section>
+<section id="contact" class="section alt plane">
+      <div class="container">
+        <div class="section-head">
+          <h2>Request a consult</h2>
+          <p class="muted">Tell me what’s going on and I’ll recommend the best next step.</p>
+        </div>
 
-<section id="recover" class="plane">
-  <div class="container plane-inner">
-    <h2>Recover</h2>
-    <p>Backups you can actually restore when it matters.</p>
-  </div>
-</section>
+        <!-- Netlify form: works on GitHub/Netlify without backend -->
+        <form name="consult" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html" class="form">
+          <input type="hidden" name="form-name" value="consult" />
+          <p class="hidden">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
 
-<section id="contact" class="plane">
-  <div class="container plane-inner">
-    <h2>Request a consult</h2>
-    <p>Tell us what’s going on and we’ll recommend next steps.</p>
-  </div>
-</section>
+          <div class="grid">
+            <label>
+              Your name
+              <input name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+          </div>
 
-<script src="assets/js/main.js"></script>
+          <div class="grid">
+            <label>
+              Business name (optional)
+              <input name="business" autocomplete="organization" />
+            </label>
+            <label>
+              Location (city/province)
+              <input name="location" placeholder="e.g., Calgary, AB" />
+            </label>
+          </div>
+
+          <label>
+            What do you need help with?
+            <select name="service" required>
+              <option value="" selected disabled>Choose one…</option>
+              <option>Website design (new or refresh)</option>
+              <option>Website care plan (updates + backups)</option>
+              <option>Remote tech support</option>
+              <option>Business email setup & cleanup</option>
+              <option>Security & backup safety check</option>
+              <option>Automation & time‑savers</option>
+              <option>Google Business Profile setup</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+
+          <label>
+            Brief description
+            <textarea name="details" rows="6" placeholder="What happened? What systems are involved? Any deadlines?" required></textarea>
+          </label>
+
+          <div class="grid">
+            <label>
+              Urgency
+              <select name="urgency" required>
+                <option>Not urgent</option>
+                <option>Within 1–2 weeks</option>
+                <option>This week</option>
+                <option>Today (containment)</option>
+              </select>
+            </label>
+
+            <label>
+              Preferred contact method
+              <select name="contact_method" required>
+                <option>Email</option>
+                <option>Phone</option>
+                <option>Video call</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" name="consent" required />
+            <span>I agree you can contact me about this request.</span>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Send request</button>
+            <p class="fineprint">
+              Note: Please don’t include sensitive data (passwords, medical info) in this form.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-footer">
+          <span class="mark" aria-hidden="true"></span>
+          <div>
+            <div class="brand-name">Alderline Systems</div>
+            <div class="muted">Remote-first • Alberta-based • Serving Canada</div>
+          </div>
+        </div>
+        <p class="fineprint">
+          © <span id="year"></span> Alderline Systems. All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
