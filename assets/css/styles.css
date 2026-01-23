@@ -647,20 +647,8 @@ img{max-width:100%;height:auto;}
   border-radius: var(--radius2);
   box-shadow: var(--shadow);
   padding: 28px;
-  transform: translateY(10px);
-  opacity: .98;
-  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
 }
 
-/* Active state: subtle emphasis only */
-.plane.is-active{ z-index: 3; }
-.plane.is-peek{ z-index: 2; }
-.plane.is-behind{ z-index: 1; }
-.plane.is-active .plane-inner{
-  transform: translateY(0);
-  border-color: rgba(59,99,217,.22);
-  box-shadow: 0 26px 70px rgba(15,23,42,.10);
-}
 
 /* Remove motion/transform on small screens for a clean mobile layout */
 @media (max-width: 980px){
@@ -670,30 +658,6 @@ img{max-width:100%;height:auto;}
 @media (prefers-reduced-motion: reduce){
   .plane .plane-inner{ transition:none; transform:none; }
 }
-
-/* Rail navigation (desktop only) */
-.rail{
-  position:fixed;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
-  display:grid;
-  gap:10px;
-  z-index:60;
-}
-.rail a{
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background:rgba(30,45,80,.18);
-  border:1px solid rgba(30,45,80,.18);
-  transition:transform .18s ease, background .18s ease;
-}
-.rail a.is-active{
-  background:rgba(59,99,217,.85);
-  transform:scale(1.45);
-}
-@media (max-width: 900px){ .rail{ display:none; } }
 
 /* Alberta widget near the top */
 .alberta-widget{
@@ -709,56 +673,6 @@ img{max-width:100%;height:auto;}
 .alberta-widget img{ width: 34px; height: 34px; }
 .alberta-widget .title{ font-weight: 900; letter-spacing: -.2px; }
 .alberta-widget .sub{ color: var(--muted2); font-weight: 800; font-size: 13px; }
-
-/* Hero stack: overlap on desktop, normal list on mobile */
-.hero-side{ display:flex; flex-direction:column; gap:14px; }
-.stack-wrap{ position:relative; }
-.stack{
-  position:relative;
-  height: 320px;
-}
-.stack .card{
-  position:absolute;
-  left:0;
-  right:0;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding: 14px 14px;
-  border-radius: 22px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.90);
-  box-shadow: var(--shadow2);
-  text-decoration:none;
-}
-.stack .card img{ width: 26px; height: 26px; }
-.stack .card strong{ display:block; font-size: 15px; }
-.stack .card span{ display:block; color: var(--muted); font-weight: 700; font-size: 13px; }
-.stack .card em{ margin-left:auto; font-style: normal; color: rgba(59,99,217,.92); font-weight: 900; }
-
-.stack .z1{ top: 0; transform: translateY(4px) scale(.98); opacity:.92; z-index: 1; }
-.stack .z2{ top: 96px; transform: translateY(0) scale(1); z-index: 2; }
-.stack .z3{ top: 192px; transform: translateY(-4px) scale(1.02); z-index: 3; }
-
-.stack-badge{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top: 10px;
-  color: var(--muted);
-  font-weight: 900;
-}
-.stack-badge img{ width: 18px; height: 18px; }
-
-/* Quiet tilt: tiny, and disabled on touch */
-.hero-tilt{ perspective: 900px; }
-.hero-tilt .stack{ transform-style: preserve-3d; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 140ms ease; }
-@media (hover: none){ .hero-tilt .stack{ transform:none !important; } }
-
-@media (max-width: 980px){
-  .stack{ height:auto; display:grid; gap: 10px; }
-  .stack .card{ position:relative; top:auto; transform:none; }
-}
 
 /* Use the logo for small brand marks (footer, etc.) */
 .mark{ background:none !important; border:none !important; width:auto; height:auto; }
