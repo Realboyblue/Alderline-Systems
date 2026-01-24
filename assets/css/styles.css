@@ -158,24 +158,6 @@ h1{
 }
 .cta-row{ display:flex; gap:12px; margin: 18px 0 12px; flex-wrap:wrap; }
 
-.proof{
-  display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px;
-}
-.proof .chip{
-  display:inline-flex; align-items:center; gap:8px;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.8);
-  color: var(--muted);
-  font-weight:800;
-  font-size:13px;
-}
-.proof .dot{
-  width:10px; height:10px; border-radius:999px;
-  background: linear-gradient(135deg, var(--brand1), var(--brand2));
-}
-
 .hero-visual{
   position:relative;
   border-radius: var(--radius2);
@@ -709,25 +691,62 @@ img{max-width:100%;height:auto;}
   .brand-tag{ display:none; }
 }
 
-/* Proof section: keep quote as a block */
-.quote-card{
-  margin-top: 14px;
-  border-radius: var(--radius2);
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.86);
-  box-shadow: var(--shadow2);
-  padding: 18px;
+/* ===== Hero lockup (full logo near top) ===== */
+.hero-lockup{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  margin: 14px 0 10px;
 }
-.quote-card .quote{
-  margin: 0;
-  font-weight: 900;
-  letter-spacing: -.2px;
+.hero-lockup-mark{
+  width: 86px;
+  height: auto;
+  flex: 0 0 auto;
 }
-.quote-card .fineprint{
-  margin: 10px 0 0;
-  color: var(--muted2);
+.hero-lockup-word{
+  height: 40px;
+  width: auto;
+  display:block;
+}
+.hero-lockup-tag{
+  margin-top: 4px;
   font-size: 13px;
+  font-weight: 800;
+  color: var(--muted2);
+  letter-spacing: .18px;
 }
+@media (max-width: 520px){
+  .hero-lockup{ gap: 12px; }
+  .hero-lockup-mark{ width: 72px; }
+  .hero-lockup-word{ height: 34px; }
+}
+
+/* Simple focus lists (less widget-y) */
+.focus-list,
+.aside-list{
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 10px;
+}
+.focus-list li,
+.aside-list li{
+  padding-left: 18px;
+  position: relative;
+  color: var(--muted);
+}
+.focus-list li::before,
+.aside-list li::before{
+  content: "•";
+  position:absolute;
+  left: 0;
+  top: 0;
+  color: var(--muted2);
+  font-weight: 900;
+}
+
+
 
 /* Pricing: callout card */
 .callout{ margin-top: 18px; }
