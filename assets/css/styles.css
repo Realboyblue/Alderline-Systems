@@ -118,7 +118,7 @@ img{ max-width:100%; display:block; }
 .btn:active{ transform: translateY(0); box-shadow:none; }
 .btn-primary{
   border-color: rgba(59,99,217,.22);
-  background: linear-gradient(135deg, rgba(59,99,217,.92), rgba(59,99,217,.82));
+  background: rgba(37,99,235,.08);
   color: white;
 }
 .btn-primary:hover{ border-color: rgba(37,99,235,.32); }
@@ -172,7 +172,7 @@ h1{
 .hero-visual .art{
   aspect-ratio: 16/11;
   border-radius: 22px;
-  background: linear-gradient(135deg, rgba(37,99,235,.10), rgba(20,184,166,.10));
+  background: rgba(37,99,235,.08);
   border: 1px solid rgba(15,23,42,.10);
   display:flex;
   align-items:center;
@@ -231,7 +231,7 @@ border-top: 1px solid var(--border);
 .icon-badge{
   width:42px; height:42px; border-radius: 16px;
   border: 1px solid rgba(15,23,42,.10);
-  background: linear-gradient(135deg, rgba(37,99,235,.15), rgba(20,184,166,.12));
+  background: rgba(37,99,235,.08);
   display:flex; align-items:center; justify-content:center;
   flex:0 0 auto;
 }
@@ -295,7 +295,7 @@ border-top: 1px solid var(--border);
   display:flex; align-items:center; justify-content:center;
   font-weight: 900;
   color: white;
-  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  background: rgba(37,99,235,.08);
   flex:0 0 auto;
 }
 .step h3{ margin:0 0 6px; font-size: 16px; }
@@ -446,7 +446,7 @@ textarea{ resize: vertical; }
 }
 .avatar{
   width:38px; height:38px; border-radius: 16px;
-  background: linear-gradient(135deg, rgba(37,99,235,.18), rgba(20,184,166,.14));
+  background: rgba(37,99,235,.08);
   border: 1px solid rgba(15,23,42,.10);
 }
 
@@ -539,7 +539,7 @@ img{max-width:100%;height:auto;}
 }
 
 /* Slightly softer accent usage (red is for tiny details only) */
-.dot{ background: linear-gradient(135deg, rgba(59,99,217,1), rgba(199,58,62,1)); }
+.dot{ background: rgba(37,99,235,.08); }
 
 @media (min-width: 980px){
   .hero-visual{
@@ -663,7 +663,7 @@ img{max-width:100%;height:auto;}
 .mark{ background:none !important; border:none !important; width:auto; height:auto; }
 .footer-mark{ width: 22px; height: 22px; margin-right: 10px; vertical-align: middle; }
 
-/* Icon badges: swap to logo mark (simple + consistent) */
+/* Icon badges: small section icons (avoid repeating the logo everywhere) */
 .icon-badge{ position:relative; }
 .icon-badge img{ width: 26px; height: 26px; object-fit: contain; }
 
